@@ -1,0 +1,76 @@
+
+
+
+
+
+
+
+/* Estilo para a seção de imagem e texto acima do footer */
+.image-text-section {
+    background-color: #f9f9f9;
+    padding: 60px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.image-text-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.image-section img {
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.text-section {
+    max-width: 600px;
+}
+
+.text-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.text-section p {
+    font-size: 25px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.button-learn-more {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.button-learn-more:hover {
+    background-color: #555;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .image-text-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .image-section img {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .text-section {
+        max-width: 100%;
+    }
+}

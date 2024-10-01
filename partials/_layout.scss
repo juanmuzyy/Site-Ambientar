@@ -1,0 +1,413 @@
+/* Layout Principal Responsivo */
+.container {
+    max-width: 1340px;
+    margin: 0 auto; /* Mantém sempre centralizado */
+    padding: 0 16px; /* Ajustei o padding para responsividade */
+}
+
+/* Background Home Responsivo */
+.bg-home {
+    position: relative;
+}
+.bg-home::before {
+    content: "";
+    display: block;
+    background-image: linear-gradient(to bottom, rgba(6, 18, 30, 0.1), #06121e), url("../assets/bg.fundo.jpg");
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+}
+
+/* Menu de Navegação Responsivo */
+.navbar {
+    background-color: #fff;
+    width: 100%;
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 16px;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.menu li {
+    position: relative; /* Necessário para o submenu */
+    display: inline-block;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 18px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.menu a:hover {
+    background-color: #7cfc00;
+    border-radius: 4px;
+}
+
+/* Submenu Responsivo */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #555;
+    min-width: 160px;
+    z-index: 1;
+    border-radius: 4px;
+}
+
+.dropdown-content li {
+    padding: 12px 16px;
+}
+
+.dropdown-content li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px 15px;
+}
+
+.dropdown-content li a:hover {
+    background-color: #7cfc00;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* HERO Responsivo */
+.hero {
+    color: #fff;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero h1 {
+    text-align: center;
+    line-height: 150%;
+    max-width: 940px;
+    font-size: 48px;
+}
+
+.hero p {
+    text-align: center;
+    margin: 14px 0;
+}
+
+.button-contact {
+    padding: 14px 28px;
+    color: #fff;
+    background-color: #7cfc00;
+    border: 0;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 14px 0;
+    animation: scaleButton 0.8s alternate infinite;
+}
+
+@keyframes scaleButton {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.2);
+    }
+}
+
+/* Hero Responsivo para Tablets */
+@media screen and (max-width: 768px) {
+    .hero {
+        min-height: 60vh;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+        padding: 0 14px;
+        max-width: 100%;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Hero Responsivo para Smartphones */
+@media screen and (max-width: 480px) {
+    .hero h1 {
+        font-size: 24px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .button-contact {
+        font-size: 16px;
+    }
+}
+
+/* Cards Responsivos */
+.info-card {
+    background-color: #7cfc00;
+    padding: 40px 0;
+    margin-bottom: 40px;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.card-item {
+    background-color: #0b151f;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card-item h3 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    color: #fff;
+}
+
+.card-item p {
+    font-size: 1em;
+    color: #fff;
+}
+
+/* Cards Responsivos para Tablets e Smartphones */
+@media screen and (max-width: 768px) {
+    .card-grid {
+        padding: 0 14px;
+    }
+}
+
+/* About Section Responsivo */
+.about {
+    overflow: hidden;
+    color: #fff;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 34px 14px 64px 14px;
+}
+
+.about-content img {
+    max-width: 100%;
+    border-radius: 30px;
+}
+
+.about-content.reverse-layout {
+    flex-direction: row-reverse;
+}
+
+.about-content div {
+    flex: 1;
+}
+
+.about-description h2 {
+    font-size: 38px;
+    margin-bottom: 24px;
+}
+
+.about-description p {
+    margin-bottom: 14px;
+    line-height: 150%;
+}
+
+.about-description a {
+    border-radius: 30px;
+    height: 35px;
+    width: 120px;
+    text-transform: uppercase;
+    border: 2px;
+    background-color: #7cfc00;
+    color: #000000;
+    font-weight: bold;
+}
+
+/* About Section Responsivo para Tablets */
+@media screen and (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-description h2 {
+        font-size: 28px;
+    }
+}
+
+/* Serviços Responsivos */
+.services {
+    background-color: #fff;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 55px 14px;
+}
+
+.services-content h2 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 38px;
+    margin-bottom: 14px;
+}
+
+.services-content p {
+    line-height: 150%;
+    margin-bottom: 14px;
+    text-align: center;
+    max-width: 780px;
+}
+
+.haircuts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 0 44px 34px 44px;
+}
+
+.haircut {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 14px;
+    box-shadow: 0px -1px 17px -4px #06121e;
+    overflow: hidden;
+}
+
+.haircut img {
+    width: 100%;
+    max-width: 354px;
+    transition: transform 0.2s;
+}
+
+.haircut img:hover {
+    transform: scale(1.2);
+}
+
+.haircut-info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: #0b151f;
+    color: #fff;
+}
+
+/* Serviços Responsivo para Tablets e Smartphones */
+@media screen and (max-width: 768px) {
+    .haircuts {
+        flex-direction: column;
+    }
+
+    .haircut img {
+        max-width: 100%;
+    }
+}
+
+/* Rodapé Responsivo */
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+.footer > div {
+    margin-bottom: 20px;
+}
+
+.footer-iconsr {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer img {
+    max-width: 250px;
+}
+
+.footer h2 {
+    text-align: center;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Botão do WhatsApp */
+.btn-whatsapp {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 99;
+}
+
+.btn-whatsapp img {
+    max-width: 74px;
+    transition: transform 0.4s;
+}
+
+.btn-whatsapp img:hover {
+    transform: scale(1.2);
+}
+
+
+@media screen and (max-width: 768px) {
+    .btn-whatsapp {
+        img {
+            max-width: 64px;
+        }
+    }
+}
